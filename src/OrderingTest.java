@@ -17,6 +17,7 @@ public class OrderingTest {
          * 创建一个比较器，自然顺序
          */
         Ordering<Integer> naturalOrder = Ordering.natural();
+        //list.sort(naturalOrder);
         System.out.println(naturalOrder.sortedCopy(list));
 
         /**
@@ -25,6 +26,13 @@ public class OrderingTest {
          */
         Ordering<Object> arbitraryOrder = Ordering.arbitrary();
         System.out.println(arbitraryOrder.sortedCopy(list));
+
+        /**
+         * create order comparator by the string length
+         * 使用 toString 方法返回的字符串的字典序
+         */
+        Ordering<Object> useToStringOrder = Ordering.usingToString();
+        System.out.println(useToStringOrder.sortedCopy(list));
 
         /**
          * create arbitrary order comparator
