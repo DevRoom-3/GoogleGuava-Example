@@ -12,7 +12,7 @@ Google 核心 Java 库的用法即用例整理，只介绍日常编码中最常�
 ## String
 String 相关的用法有 Joiner 将元素拼接成字符串，Splitter 按照某样规则分割字符串
 ```java
-public class Basic.StringTest {
+public class StringTest {
 
 
     private static final String str = "Java,Golang,Python,Scala";
@@ -59,7 +59,7 @@ public class Basic.StringTest {
 ## Preconditions
 一种前置断言，用来检测参数
 ```java
-public class Basic.PreconditionsTest {
+public class PreconditionsTest {
 
     private static final Logger logger = Logger.getLogger(Preconditions.class.getName());
 
@@ -96,7 +96,7 @@ Ordering 是 Guava 提供的一个比较器工具，内置的静态方法有：
 3. `arbitrary()`：返回一个所有对象的任意顺序
 
 ```java
-public class Basic.OrderingTest {
+public class OrderingTest {
 
     private static final List<Integer> list = Lists.newArrayList(7, 4, 9, 10, 2);
 
@@ -134,7 +134,7 @@ public class Basic.OrderingTest {
 ## Lists
 Guava 为常见的集合类提供了静态创建方法
 ```java
-public class Collections.Utility.ListsTest {
+public class ListsTest {
 
     public static void main(String[] args) throws Exception {
 
