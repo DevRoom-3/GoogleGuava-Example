@@ -5,9 +5,9 @@
 Google Guava core library Example and Demos<br>
 Google 核心 Java 库的用法即用例整理，只介绍日常编码中最常用的方式方法，对于完整的教程请参见 [Guava Wiki](https://github.com/google/guava/wiki) <br>
 
-| Ⅰ  | Ⅱ | Ⅲ | Ⅳ | Ⅴ |
-| :--------: | :----------: | :-----------: | :-----------: | :-----------: |
-| [String](##String)  |  [Preconditions](##Preconditions)|[Ordering](##Ordering) | [Lists](##Lists) | [Iterables](##Iterables) |
+| I | II | III | IV | V | VI| VII |
+| :--------: | :----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | 
+| [String](##String)  |  [Preconditions](##Preconditions)|[Ordering](##Ordering) | [Lists](##Lists) | [Iterables](##Iterables) | [ListenableFuture](##ListenableFuture) | [Cache](##Cache) |
 
 ## String
 String 相关的用法有 Joiner 将元素拼接成字符串，Splitter 按照某样规则分割字符串
