@@ -5,9 +5,9 @@
 Google Guava core library Example and Demos<br>
 Google 核心 Java 库的用法即用例整理，只介绍日常编码中最常用的方式方法，对于完整的教程请参见 Guava Wiki <br>
 
-| Ⅰ  | Ⅱ | Ⅲ | Ⅳ |
-| :--------: | :----------: | :-----------: | :-----------: |
-| [String](##String)  |  [Preconditions](##Preconditions)|[Ordering](##Ordering) | [Lists](##Lists) |
+| Ⅰ  | Ⅱ | Ⅲ | Ⅳ | Ⅴ |
+| :--------: | :----------: | :-----------: | :-----------: | :-----------: |
+| [String](##String)  |  [Preconditions](##Preconditions)|[Ordering](##Ordering) | [Lists](##Lists) | [Iterables](##Iterables) |
 
 ## String
 String 相关的用法有 Joiner 将元素拼接成字符串，Splitter 按照某样规则分割字符串
@@ -167,6 +167,76 @@ public class ListsTest {
         List<String> removeNullNames = Lists.newArrayList("John", null, "Adam", null, "Jane");
         Iterables.removeIf(removeNullNames, Predicates.isNull());
         System.out.println(removeNullNames);
+    }
+}
+```
+
+## Iterables
+```java
+public class IterablesTest {
+
+    public static void main(String[] args) {
+        /**
+         * filter elements by type
+         * 按照类型筛选元素
+         */
+        List<Object> randomObjects = Lists.newArrayList(15, 12d, "hello", Lists.newArrayList(),
+                Maps.newConcurrentMap(), "world");
+        Iterable<String> result = Iterables.filter(randomObjects, String.class);
+        System.out.println(result);
+
+        /**
+         * combine two iterables
+         * 合并两个list，不去重
+         */
+        List<String> list1 = Lists.newArrayList("one", "two");
+        List<String> list2 = Lists.newArrayList("two");
+        Iterable<String> oneAndTwo = Iterables.concat(list1, list2);
+        System.out.println(oneAndTwo);
+
+        /**
+         * find first specific number
+         * 寻找满足条件的第一个值
+         */
+        List <Integer> numbers = Lists.newArrayList(1, 2, 3);
+        Integer value = Iterables.find(numbers, new Predicate<Integer> () {
+            public boolean apply(Integer number) {
+                return number == 3 ;
+            }
+        });
+        System.out.println(value);
+
+        /**
+         * find first not null
+         * 寻找第一个非 null 值
+         */
+        List<String> strings = Lists.newArrayList("java", null, "python");
+        String firstNonNull = Iterables.find(strings, Predicates.notNull());
+        System.out.println(firstNonNull);
+
+
+        /**
+         * get first element
+         * 拿出第一个值
+         */
+        List<String> strings2 = Lists.newArrayList(null, "one", "two", "three");
+        String firstElement = Iterables.getFirst(strings, null);
+        String lastElement = Iterables.getLast(strings, null);
+        System.out.println(firstElement);
+        System.out.println(lastElement);
+
+        /**
+         * transform elements
+         */
+        List<String> numbersAsStrings = Lists.newArrayList("1", "2", "3");
+
+        Iterable<Double> doubles = Iterables.transform(numbersAsStrings, new Function<String, Double>() {
+            @Override
+            public Double apply(String input) {
+                return new Double(input);
+            }
+        });
+        System.out.println(doubles);
     }
 }
 ```
