@@ -3,7 +3,7 @@
 
 # Intro
 Google Guava core library Example and Demos<br>
-Google 核心 Java 库的用法即用例整理，只介绍日常编码中最常用的方式方法，对于完整的教程请参见 Guava Wiki <br>
+Google 核心 Java 库的用法即用例整理，只介绍日常编码中最常用的方式方法，对于完整的教程请参见 [Guava Wiki](https://github.com/google/guava/wiki) <br>
 
 | Ⅰ  | Ⅱ | Ⅲ | Ⅳ | Ⅴ |
 | :--------: | :----------: | :-----------: | :-----------: | :-----------: |
